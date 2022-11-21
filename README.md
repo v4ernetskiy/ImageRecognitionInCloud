@@ -1,2 +1,2 @@
-# MR_Team_Rep
+# Image Recognition in Cloud
 UrFU ML Learning MR team repository
