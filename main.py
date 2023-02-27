@@ -6,7 +6,8 @@ from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
 
-@st.cache(allow_output_mutation=True)
+
+@st.cache_data(allow_output_mutation=True)
 def load_model():
     return EfficientNetB0(weights='imagenet')
 
@@ -17,7 +18,7 @@ def preprocess_image(img):
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
     return x
-  
+
 
 def load_image():
     uploaded_file = st.file_uploader(label='SELECT AN IMAGE FOR RECOGNITION')
